@@ -120,6 +120,7 @@
 - (IBAction) minusFileRow:(id)sender;
 - (void) addFileToFilesTable: (NSURL*) fileUrl;
 - (IBAction) doubleClickedParamsRow:(id)sender;
+- (IBAction) doubleClickedUrlParamsRow:(id)sender;
 - (IBAction) plusParamsRow:(id)sender;
 - (IBAction) minusParamsRow:(id)sender;
 - (void) doneEditingParamsRow:(TableRowAndColumn *)tableRowAndColumn;

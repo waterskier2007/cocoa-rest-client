@@ -86,6 +86,7 @@
     
     [self.headersTableView setDoubleAction:@selector(doubleClickedHeaderRow:)];
     [self.headersTableView setTextDidEndEditingAction:@selector(doneEditingHeaderRow:)];
+    [self.urlParametersTableView setDoubleAction:@selector(doubleClickedUrlParamsRow:)];
     [self.paramsTableView setDoubleAction:@selector(doubleClickedParamsRow:)];
     [self.paramsTableView setTextDidEndEditingAction:@selector(doneEditingParamsRow:)];
     [self.filesTableView setDoubleAction:@selector(doubleClickedFileRow:)];
@@ -399,6 +400,17 @@
         } else if ([currentTabLabel isEqualToString:@"Files"] && [self.filesTableView selectedRow] > -1) {
             [self minusFileRow:nil];
         }
+    }
+}
+
+
+- (IBAction) doubleClickedUrlParamsRow:(id)sender {
+    NSInteger row = [self.urlParametersTableView clickedRow];
+    NSInteger col = [self.urlParametersTableView clickedColumn];
+    if (row == -1 && col == -1) {
+        [self plusUrlParamsRow:sender];
+    } else {
+        [self.urlParametersTableView editColumn:col row:row withEvent:nil select:YES];
     }
 }
 
